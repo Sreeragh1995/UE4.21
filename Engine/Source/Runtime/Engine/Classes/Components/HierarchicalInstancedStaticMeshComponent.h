@@ -238,7 +238,7 @@ public:
 	virtual void ApplyComponentInstanceData(class FInstancedStaticMeshComponentInstanceData* InstancedMeshData) override;
 	
 	// Number of instances in the render-side instance buffer
-	virtual int32 GetNumRenderInstances() const { return SortedInstances.Num(); }
+	virtual int32 GetNumRenderInstances() const { return NumBuiltRenderInstances + UnbuiltInstanceBoundsList.Num(); }
 
 	/** Will apply current density scaling, if enabled **/
 	void UpdateDensityScaling();
